@@ -1,5 +1,7 @@
 @import "_reset";
 @import "_metodos";
+@import "_extends";
+@import "_mapas";
 
 // COLORES
 $color-1: #222;
@@ -25,7 +27,7 @@ $padding: 20px;
         background-color: #25D366;
         line-height: 60px;
         text-align: center;
-        font-size: 38px;
+        font-size: map-get($map: $fontSize, $key: 'h1');
         border-radius: 50%;
         z-index: 10;
         border:none;
@@ -37,7 +39,7 @@ $padding: 20px;
         }
         .msj-emerg{
             position: fixed;
-            font-size: 20px;
+            font-size: map-get($map: $fontSize, $key: 'h3');
             @include dimensiones(300px, 250px);
             background: $color-2;
             border: 3px solid #25D366;
@@ -134,13 +136,9 @@ $padding: 20px;
     @include dimensiones(60px, 100%);
     background-color: $color-1;
     
-    .titulo{
-        color: $color-2;
-        font-size: 20px;
-        text-align: center;
-        padding: $padding;
-        text-transform: uppercase;
-        font-weight: bolder;
+    .cabecera{
+        @extend .titulos;
+        font-size: map-get($map: $fontSize, $key: 'h2');
         @include animacion;
         animation-name: animacion_texto;
         animation-duration: .8s;
@@ -315,9 +313,9 @@ section{
                 border-radius: 5px;
             }
             span{
+                @extend .titulos;
                 background-color: $color-1;
-                color:$color-2;
-                padding: 6px;
+                font-size: map-get($map: $fontSize, $key: 'h3');
             }
         }
     }

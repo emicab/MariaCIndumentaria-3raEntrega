@@ -49,6 +49,14 @@ table {
   border-spacing: 0;
 }
 
+.titulos, .contenedor_titulo .cabecera, section .container-fluid div span {
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
 * {
   font-family: 'Roboto', serif !important;
 }
@@ -68,7 +76,7 @@ table {
   background-color: #25D366;
   line-height: 60px;
   text-align: center;
-  font-size: 38px;
+  font-size: 32px;
   border-radius: 50%;
   z-index: 10;
   border: none;
@@ -84,7 +92,7 @@ table {
 
 .ventana-wsp .btn-wtsp .msj-emerg {
   position: fixed;
-  font-size: 20px;
+  font-size: 18px;
   height: 300px;
   width: 250px;
   background: #fff;
@@ -233,13 +241,8 @@ table {
   background-color: #222;
 }
 
-.contenedor_titulo .titulo {
-  color: #fff;
-  font-size: 20px;
-  text-align: center;
-  padding: 20px;
-  text-transform: uppercase;
-  font-weight: bolder;
+.contenedor_titulo .cabecera {
+  font-size: 24px;
   -webkit-animation-name: animacion_texto;
           animation-name: animacion_texto;
   -webkit-animation-duration: .8s;
@@ -479,6 +482,5 @@ section .container-fluid div iframe {
 
 section .container-fluid div span {
   background-color: #222;
-  color: #fff;
-  padding: 6px;
+  font-size: 18px;
 }
