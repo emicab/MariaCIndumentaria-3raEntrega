@@ -1,0 +1,48 @@
+@mixin animacion {
+    @keyframes animacion_texto {
+        from{
+            transform: translateX(-100%);
+        }
+        to{
+            transform: translateX(0%);
+        }
+    }
+}
+@mixin animacion-ico {
+    @keyframes animacion_icono {
+        0%{
+            transform: scale(1);
+        }
+        50%{
+            transform: scale(1.2);
+        }
+        100%{
+            transform: scale(1);
+        }
+    }
+}
+
+@mixin mediaQ {
+    @media screen and (max-width: 992px){
+        transform: translateX(10px);
+    }
+}
+
+@mixin dimensiones ($altura, $ancho) {
+    height: $altura;
+    width: $ancho;
+}
+@mixin cuadrado ($altura) {
+    height: $altura;
+    width: $altura;
+}
+
+$delay: 0, 200, 400, 600;
+
+
+// @each $delay-ico in $delay {
+//     $i: $i + 1;
+//     a:nth-child(#{$i}){
+//         animation-delay: $delay + 1ms;
+//     }
+// }

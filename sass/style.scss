@@ -1,4 +1,6 @@
 @import "_reset";
+@import "_metodos";
+
 // COLORES
 $color-1: #222;
 $color-2: #fff;
@@ -19,8 +21,7 @@ $padding: 20px;
         position: fixed;
         bottom: 20px;
         right: 20px;
-        height: 60px;
-        width: 60px;
+        @include cuadrado(60px);
         background-color: #25D366;
         line-height: 60px;
         text-align: center;
@@ -37,8 +38,7 @@ $padding: 20px;
         .msj-emerg{
             position: fixed;
             font-size: 20px;
-            width: 250px;
-            height: 300px;
+            @include dimensiones(300px, 250px);
             background: $color-2;
             border: 3px solid #25D366;
             border-radius: 5px;
@@ -61,8 +61,7 @@ $padding: 20px;
             outline: none;
         }
         .btn-enviar{
-            width: 200px;
-            height: 40px;
+            @include dimensiones(40px ,200px);
             background-color: #128C7E;
             border: none;
             line-height: 40px;
@@ -89,8 +88,10 @@ $padding: 20px;
         &:hover{
             text-decoration: underline;
             transform: scale(1.05);
+            @include mediaQ;
         }
-        &:last-child{
+        span{
+            padding: 5px;
             background-color: $color-1;
             color: $color-2 !important;
         }
@@ -111,8 +112,7 @@ $padding: 20px;
 // Footer
 .footer__redes{
     background-color: $color-1;
-    width: 100%;
-    height: 60px;
+    @include dimensiones(60px, 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,25 +122,36 @@ $padding: 20px;
         color: $color-2;
         padding: $padding;
         bottom: 1px;
+        @include animacion-ico;
+        animation-name: animacion_icono;
+        animation-duration: 2s;
+        animation-iteration-count: infinite
     }
 }
 
 // PRODUCTOS
-.titulo{
-    color: $color-2;
+.contenedor_titulo{
+    @include dimensiones(60px, 100%);
     background-color: $color-1;
-    font-size: 20px;
-    text-align: center;
-    padding: $padding;
-    text-transform: uppercase;
-    font-weight: bolder;
+    
+    .titulo{
+        color: $color-2;
+        font-size: 20px;
+        text-align: center;
+        padding: $padding;
+        text-transform: uppercase;
+        font-weight: bolder;
+        @include animacion;
+        animation-name: animacion_texto;
+        animation-duration: 1s;
+    }
 }
 
 .card_contenedor{
     position: relative;
 	width: 100%;
 	display: grid;
-	grid-template-columns: repeat(4, minmax(200px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	grid-gap: 25px;
 	padding: $padding;
     justify-items: center;
@@ -158,8 +169,7 @@ $padding: 20px;
             }
             .card__imgBx{
                 position: relative;
-                width: 100%;
-                height: 310px;
+                @include dimensiones(310px, 100%);
                 overflow: hidden;
                 &:hover{
                     img{
@@ -170,8 +180,7 @@ $padding: 20px;
                     position: absolute;
                     top: 0;
                     left: 0;
-                    width: 100%;
-                    height: 100%;
+                    @include cuadrado(100%);
                     object-fit: cover;
                     transition: .4s ease-out;
                     transform-origin: right;    
@@ -183,8 +192,7 @@ $padding: 20px;
                     .action__box{
                         position: relative;
                         list-style: none;
-                        width: 40px;
-                        height: 40px;
+                        @include cuadrado(40px);
                         background: $color-2;
                         border: 1px solid $color-2;
                         display: flex;
@@ -239,8 +247,7 @@ $padding: 20px;
                             position: absolute;
                             right: -20px;
                             top: 12px;
-                            height: 150px;
-                            width: 170px;
+                            @include dimensiones(150px, 170px);
                             transform: translate(-50%, 0px);
                             padding: 6px 10px;
                             background-color: $color-3;
@@ -301,7 +308,7 @@ section{
     justify-content: center;
     .container-fluid{
         div{
-            .titulo{
+            .contenedor_titulo{
                 margin-bottom: 10px;
             }
             iframe{
